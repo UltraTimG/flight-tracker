@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Flight Tracker </title>
+<style>
+ body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color:  #ffffff;
+            color: #000000;
+        }
+        header {
+            color: #000000;
+            padding: 1rem 0;
+            text-align: center;
+            background: linear-gradient(270deg, #000000, #ffffff, #ff0000, #ffffff, #008000);
+            background-size: 1000% 100%;
+            animation: kenyanFlag 10s linear infinite;
+        }
+
+        @keyframes kenyanFlag {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        h1{
+            text-align: center;
+        }      
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            color: #888;
+            font-size: 0.95rem;
+        }
+</style>
+</head>
+<body>
+    <header>Flight Tracker</header>
+    <h1>Welcome to Flight Tracker!</h1>
+
+    <nav>
+    <a href="login">login</a>
+    <a href="register">register</a>
+    </nav>
+
+    <P>{{msg}}</P>
+
+
+    <style>
+        body {
+            cursor: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2708.png') 8 8, auto;
+        }
+    </style>
+    <footer>
+        &copy; 2025 Flight Tracker. All rights reserved.
+    </footer>
+</body>
+</html>

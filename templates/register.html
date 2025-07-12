@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flight Tracker - Register</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            color: #000000;
+            padding: 1rem 0;
+            text-align: center;
+            background: linear-gradient(270deg, #000000, #ffffff, #ff0000, #ffffff, #008000);
+            background-size: 1000% 100%;
+            animation: kenyanFlag 10s linear infinite;
+        }
+        @keyframes kenyanFlag {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 0.5rem 1rem;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            color: #888;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>Flight Tracker</header>
+    <h1>Welcome to Flight Tracker</h1>
+    <h2>Register</h2>
+    <a href="login">login</a>
+
+    <form method="post" action="/register">
+        <input name="username" placeholder="Username"><br>
+           <input name="password" type="password" placeholder="Password"><br>
+        <input type="submit" value="Register"><br>
+
+        
+    </form>
+
+    <footer>&copy; 2025 Flight Tracker. All rights reserved.</footer>
+</body>
+</html>

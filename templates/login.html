@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flight Tracker - Register</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+        }
+        header {
+            color: #000000;
+            padding: 1rem 0;
+            text-align: center;
+            background: linear-gradient(270deg, #000000, #ffffff, #ff0000, #ffffff, #008000);
+            background-size: 1000% 100%;
+            animation: kenyanFlag 10s linear infinite;
+        }
+        @keyframes kenyanFlag {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        form {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        input[type="text"], input[type="password"] {
+            padding: 0.5rem;
+            margin: 0.5rem;
+            width: 200px;
+        }
+        input[type="submit"] {
+            padding: 0.5rem 1rem;
+            background-color: #000000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1rem 0;
+            color: #888;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="position: relative; width: 100%; height: 120px; overflow: hidden;">
+            <!-- World SVG -->
+            <svg viewBox="0 0 800 120" width="100%" height="120" style="position: absolute; left: 0; top: 0;"></svg>
+                <ellipse cx="400" cy="110" rx="390" ry="40" fill="#b3e0ff"/>
+                <!-- Simple continents shapes -->
+                <path d="M150,110 Q170,90 200,100 Q230,110 250,90 Q270,80 300,100 Q320,120 350,110 Q370,100 400,110 Q430,120 450,100 Q470,90 500,110 Q530,120 550,100 Q570,90 600,110 Q630,120 650,100 Q670,90 700,110" fill="#4caf50" opacity="0.7"/>
+            </svg>
+            <!-- Airplane SVG -->
+            <svg id="airplane" viewBox="0 0 60 30" width="60" height="30" style="position: absolute; top: 30px; left: 0;">
+                <polygon points="0,15 50,10 55,15 50,20" fill="#333"/>
+                <rect x="10" y="12" width="30" height="6" fill="#fff"/>
+                <rect x="40" y="13" width="10" height="4" fill="#ccc"/>
+                <polygon points="10,12 5,5 15,10" fill="#333"/>
+                <polygon points="10,18 5,25 15,20" fill="#333"/>
+            </svg>
+            <span style="position: absolute; left: 0; right: 0; top: 80px; font-size: 2rem; color: #000; font-weight: bold; text-shadow: 1px 1px 4px #fff;">Flight Tracker</span>
+        </div>
+    </header>
+    <h1>Welcome to Flight Tracker</h1>
+    <h2>Login</h2>
+    <a href="register">register</a>
+
+       <P>{{msg}}</P>
+    
+
+    <form method="post" action="/login">
+        <input name="username" placeholder="Username"><br>
+        <input name="password" type="password" placeholder="Password"><br>
+        <input type="submit" value="Login">
+    </form>
+
+    <footer>&copy; 2025 Flight Tracker. All rights reserved.</footer>
+
+    <script>
+        // Animate airplane from left to right
+        const airplane = document.getElementById('airplane');
+        let start = null;
+        function animateAirplane(ts) {
+            if (!start) start = ts;
+            const duration = 7000; // ms
+            const progress = ((ts - start) % duration) / duration;
+            const width = document.querySelector('header > div').offsetWidth;
+            const x = progress * (width + 60) - 60; // 60 is airplane width
+            const y = 30 - 10 * Math.sin(progress * Math.PI * 2); // slight up and down
+            airplane.style.left = x + 'px';
+            airplane.style.top = (30 + y) + 'px';
+            requestAnimationFrame(animateAirplane);
+        }
+        requestAnimationFrame(animateAirplane);
+    </script>
+</body>
+</html>
